@@ -44,3 +44,11 @@ require("lazy").setup({
     },
   },
 })
+
+-- To find the referent of the selecting string
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+
+-- Enable the use the current of the root direcory in gopls
+require('lspconfig').gopls.setup{
+    single_file_support = true
+}
